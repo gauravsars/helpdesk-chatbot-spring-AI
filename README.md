@@ -1,8 +1,6 @@
 # helpdesk-chatbot-spring-AI
 
 
-elpdesk Chatbot using Spring AI
-
 A Helpdesk Chatbot application built with Spring Boot, Spring AI, and LLM-powered conversation flows.
 This project allows users to chat with a virtual assistant, and automatically creates helpdesk tickets based on user input.
 Each ticket is tied to the user's email ID, which acts as the unique identifier and is mandatory for tracking progress.
