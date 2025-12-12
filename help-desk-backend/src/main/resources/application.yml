@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: "help-desk"
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:java}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  ai:
+    openai:
+      api-key: ${GROQ_API_KEY}  # <-- Use GROQ key, not OpenAI key
+      base-url: https://api.groq.com/openai
+      chat:
+        options:
+          model: llama-3.1-8b-instant   # Best Groq model (free + fast)
+
+logging:
+  level:
+    root: INFO
+    org.springframework.ai: DEBUG
+    org.springframework.ai.chat.client.advisor: DEBUG
+
+
