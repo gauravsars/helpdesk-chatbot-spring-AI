@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Ticket;
 import com.example.demo.repository.TicketRepository;
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -16,7 +17,9 @@ public class TicketService {
     private final TicketRepository ticketRepository;
 
     //create ticket
+    @Transactional
     public Ticket createTicket(Ticket ticket) {
+        ticket.setId(null);
         return ticketRepository.save(ticket);
     }
 
@@ -31,8 +34,8 @@ public class TicketService {
 
 
     //get ticket by username
-    public Ticket getTicketByUserName(String username) {
-        return ticketRepository.findByUsername(username).orElse(null);
+    public Ticket getTicketByEmailId(String email) {
+        return ticketRepository.findByEmail(email).orElse(null);
     }
 
 

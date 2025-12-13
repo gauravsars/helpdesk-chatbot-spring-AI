@@ -2,5 +2,5 @@ package com.example.demo.entity;
 
 public enum Status {
 
-    OPEN,CLOSED,RESOLVED
+    OPEN,RESOLVED,CLOSED
 }

@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,37 +18,21 @@ import java.time.LocalDateTime;
 @Builder
 public class Ticket {
 
+    @Schema(nullable = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String summary;
 
     @Enumerated(EnumType.STRING)
     private Priority priority;
 
     @Column(unique = true)
-    private String username;
-
-    private LocalDateTime createdOn;
-
-    private LocalDateTime updatedOn;
+    private String email;
 
     @Enumerated(EnumType.STRING)
     private Status status;
-
-    @PrePersist
-    void preSave() {
-        if (this.createdOn == null) {
-            this.createdOn = LocalDateTime.now();
-        }
-        this.updatedOn = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    void preUpdate() {
-        this.updatedOn = LocalDateTime.now();
-    }
 
 }
