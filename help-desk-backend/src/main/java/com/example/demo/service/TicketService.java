@@ -25,7 +25,7 @@ public class TicketService {
     }
 
 
-    public Ticket updateTicket(Ticket ticket , Long ticketId) {
+    public Ticket updateTicket(Ticket ticket) {
         return ticketRepository.save(ticket);
     }
 
