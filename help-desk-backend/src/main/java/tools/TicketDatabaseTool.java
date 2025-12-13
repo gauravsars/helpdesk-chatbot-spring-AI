@@ -21,12 +21,12 @@ public class TicketDatabaseTool {
 
     @Tool(description = "This tool helps to get ticket by username.")
     public Ticket getTicketByUserName(@ToolParam(description = "username whose ticket is required.")String username) {
-        return ticketService.getTicketByUserName(username);
+        return ticketService.getTicketByEmailId(username);
     }
 
     @Tool(description = "This tool helps to update the ticket")
     public Ticket updateTicket(@ToolParam(description = "new ticket details with ticket id.") Ticket ticket) {
-        ticketService.updateTicket(ticket);
+        return ticketService.updateTicket(ticket);
     }
 
 }
