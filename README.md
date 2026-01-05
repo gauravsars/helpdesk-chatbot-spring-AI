@@ -56,11 +56,11 @@ Spring Data
 
 LLM Provider:
 
-(Specify the provider used: OpenAI, Azure OpenAI, Ollama, etc.)
+(ChatGPT open-AI 4.1 , Grok AI)
 
 Database:
 
-H2 / PostgreSQL / MySQL (based on your configuration)
+PostgreSQL
 
 📂 Project Structure
 helpdesk-chatbot-spring-AI/
@@ -139,9 +139,3 @@ Multi-turn conversation memory
 Authentication & role-based dashboard
 
 Integration with Jira, ServiceNow, Freshdesk
-
-UI-based chat widget
-
-🤝 Contributing
-
-Contributions are welcome!
